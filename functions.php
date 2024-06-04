@@ -85,6 +85,9 @@ function school_theme_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// wide width and full width alignment support
+	add_theme_support( 'align-wide' );
+
 	/**
 	 * Add support for core custom logo.
 	 *
