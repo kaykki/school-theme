@@ -46,6 +46,9 @@ function school_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Custom Image crop size
+	add_image_size( 'student-featured-image', 300, 200, array('center') );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(

@@ -21,7 +21,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php school_theme_post_thumbnail(); ?>
+	<?php the_post_thumbnail('student-featured-image'); ?>
 
 	<div class="entry-content">
 		<?php
