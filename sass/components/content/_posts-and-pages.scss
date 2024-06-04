@@ -21,3 +21,106 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+#main {
+	width: 80%;
+	max-width: 968px;
+	margin: 0 auto;
+}
+
+
+// page-news
+@media (max-width: 768px) {
+	#primary {
+		display: block;
+	}
+
+	#secondary {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: 769px) {
+	#primary {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#secondary {
+		order: 2;
+		width: 100%;
+	}
+
+	#main {
+		order: 1;
+		flex: 1;
+	}
+}
+
+.category-tag {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+}
+
+// header, navbar
+$background-color: black;
+$hover-background-color: blue;
+$text-color: white;
+$hover-text-color: white;
+
+.site-header {
+	background-color: $background-color;
+	color: $text-color;
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.site-branding {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.site-description {
+		h1 {
+			margin: 0;
+
+			a {
+				color: $text-color;
+				text-decoration: none;
+
+				&:hover {
+					color: $hover-text-color;
+				}
+			}
+		}
+	}
+
+	.main-navigation {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: right;
+
+			li {
+				margin-left: 2rem;
+
+				a {
+					color: $text-color;
+					text-decoration: none;
+					padding: 0.5rem 1rem;
+					transition: background-color 0.3s ease;
+
+					&:hover {
+						background-color: $hover-background-color;
+						color: $hover-text-color;
+					}
+				}
+			}
+		}
+	}
+}
