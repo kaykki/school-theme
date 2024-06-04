@@ -155,7 +155,7 @@ function school_register_taxonomies() {
     wp_insert_term( 'Faculty', 'school-department' );
     wp_insert_term( 'Administrative', 'school-department' );
 
-    // Add Student Category taxonomy
+    // Student Career taxonomy
     $labels = array(
         'name'              => _x( 'Careers', 'taxonomy general name' ),
         'singular_name'     => _x( 'Career', 'taxonomy singular name' ),
