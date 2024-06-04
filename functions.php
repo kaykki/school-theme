@@ -1,4 +1,5 @@
 <?php
+require get_template_directory() . '/cpt-taxonomy.php';
 /**
  * School Theme functions and definitions
  *
@@ -163,6 +164,18 @@ function theme_enqueue_scripts() {
     wp_add_inline_script('aos-js', 'AOS.init();');
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
+function enqueue_staff_name_script($hook) {
+    if ( 'post-new.php' === $hook || 'post.php' === $hook ) {
+        global $post_type;
+        if ( 'staff' === $post_type ) {
+            wp_enqueue_script( 'staff-name-script', get_template_directory_uri() . '/js/staffName.js', array(), null, true );
+        }
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'enqueue_staff_name_script' );
+
 
 /**
  * Implement the Custom Header feature.
