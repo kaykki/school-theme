@@ -208,3 +208,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Change The Excerpt Length for archive-school-student.
+ */
+function student_list_excerpt_length( $length ) {
+	if(get_post_type() === 'school-student') {
+		return 25;
+	} 
+}
+add_filter( 'excerpt_length', 'student_list_excerpt_length', 999 );
+
+/**
+ * Change the Excerpt More text 
+ */
+function student_list_excerpt_more( $more ) {
+	if(get_post_type() === 'school-student') {
+		$more = '<br> <a class="read-more" href="' . esc_url( get_permalink() ) . '">Read more about the student…</a>';
+    	return $more;
+	} 
+}
+add_filter( 'excerpt_more', 'student_list_excerpt_more' );
