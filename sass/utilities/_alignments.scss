@@ -25,3 +25,19 @@
 
 	margin-bottom: 1.5em;
 }
+
+
+//wide width and full width alignment style
+$wide-max-width: 1200px;
+
+.alignwide {
+	max-width: $wide-max-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
