@@ -1,5 +1,5 @@
 <?php
-require get_template_directory() . '/cpt-taxonomy.php';
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 /**
  * School Theme functions and definitions
  *

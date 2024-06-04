@@ -1,7 +1,7 @@
 <?php
-// register cpt for staff
 
-function create_staff_cpt() {
+function school_register_custom_post_types() {
+    // register cpt for staff
     $labels = array(
         'name'                  => _x( 'Staff', 'post type general name' ),
         'singular_name'         => _x( 'Staff', 'post type general name' ),
@@ -48,14 +48,11 @@ function create_staff_cpt() {
         'supports'              => array( 'title' ),
     );
 
-    register_post_type( 'staff', $args );
+    register_post_type( 'schoo-staff', $args );
 }
+add_action( 'init', 'school_register_custom_post_types' );
 
-add_action( 'init', 'create_staff_cpt' );
-
-// register custom taxonomy for staff
-function create_staff_taxonomy() {
-
+function school_register_taxonomies() {
     $labels = array(
         'name'                       => _x( 'Departments', 'Taxonomy General Name' ),
         'singular_name'              => _x( 'Department', 'Taxonomy Singular Name' ),
@@ -90,10 +87,8 @@ function create_staff_taxonomy() {
         'show_in_rest'      => true,
     );
 
-    register_taxonomy( 'department', array( 'staff' ), $args );
-
-    wp_insert_term( 'Faculty', 'department' );
-    wp_insert_term( 'Administrative', 'department' );
+    register_taxonomy( 'school-department', array( 'school-staff' ), $args );
+    wp_insert_term( 'Faculty', 'school-department' );
+    wp_insert_term( 'Administrative', 'school-department' );
 }
-
-add_action( 'init', 'create_staff_taxonomy', 0 );
+add_action( 'init', 'school_register_taxonomies', 0 );
