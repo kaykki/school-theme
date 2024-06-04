@@ -209,7 +209,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Change The Excerpt Length for archive-school-student.
+ * Change The Excerpt Length for post type school-student.
  */
 function student_list_excerpt_length( $length ) {
 	if(get_post_type() === 'school-student') {
@@ -219,7 +219,7 @@ function student_list_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'student_list_excerpt_length', 999 );
 
 /**
- * Change the Excerpt More text 
+ * Change the Excerpt More text for post type school-student.
  */
 function student_list_excerpt_more( $more ) {
 	if(get_post_type() === 'school-student') {
