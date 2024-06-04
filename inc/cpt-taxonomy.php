@@ -105,7 +105,7 @@ function school_register_custom_post_types() {
                                     array( 
                                         'core/button', 
                                         array(
-                                            'placeholder' => 'Portfolio Link...',
+                                            'placeholder' => 'Portfolio',
                                         )
                                     ),
                                 ),

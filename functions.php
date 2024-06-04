@@ -228,3 +228,14 @@ function student_list_excerpt_more( $more ) {
 	} 
 }
 add_filter( 'excerpt_more', 'student_list_excerpt_more' );
+
+/**
+ * Change the Excerpt More text for post type school-student.
+ */
+function my_title_place_holder(){
+	if( get_post_type() == 'school-student' ){
+		$my_title = "Add student name";
+		return $my_title;
+	}
+}
+add_filter( 'enter_title_here', 'my_title_place_holder' );
