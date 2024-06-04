@@ -50,7 +50,7 @@ function school_register_custom_post_types() {
 
     register_post_type( 'schoo-staff', $args );
 
-    // Register Students
+    // Register Students CPT
     $labels = array(
         'name'                  => _x( 'Students', 'post type general name' ),
         'singular_name'         => _x( 'Student', 'post type singular name'),
@@ -154,5 +154,33 @@ function school_register_taxonomies() {
     register_taxonomy( 'school-department', array( 'school-staff' ), $args );
     wp_insert_term( 'Faculty', 'school-department' );
     wp_insert_term( 'Administrative', 'school-department' );
+
+    // Add Student Category taxonomy
+    $labels = array(
+        'name'              => _x( 'Careers', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Career', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Careers' ),
+        'all_items'         => __( 'All Career' ),
+        'parent_item'       => __( 'Parent Career' ),
+        'parent_item_colon' => __( 'Parent Career:' ),
+        'edit_item'         => __( 'Edit Career' ),
+        'view_item'         => __( 'View Career' ),
+        'update_item'       => __( 'Update Career' ),
+        'add_new_item'      => __( 'Add New Career' ),
+        'new_item_name'     => __( 'New Career Name' ),
+        'menu_name'         => __( 'Career' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'career' ),
+    );
+    register_taxonomy( 'school-career', array( 'school-student' ), $args );
 }
 add_action( 'init', 'school_register_taxonomies', 0 );
