@@ -95,6 +95,21 @@ function school_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-id',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'template'           => array(
+                                    array( 
+                                        'core/paragraph', 
+                                        array(
+                                            'placeholder' => 'Short biography...',
+                                        ) 
+                                    ),
+                                    array( 
+                                        'core/button', 
+                                        array(
+                                            'placeholder' => 'Portfolio Link...',
+                                        )
+                                    ),
+                                ),
+        'template_lock'      => 'all'
     );
 
     register_post_type( 'school-student', $args );

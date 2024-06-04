@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying students
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -40,7 +40,7 @@ get_header();
 									<h2><?php the_title(); ?></h2>
 								</a>
 								<?php 
-								the_post_thumbnail('medium', array('alt' => get_the_title()));
+								the_post_thumbnail('large', array('alt' => get_the_title()));
 								the_excerpt(); 
 								
 								?>
