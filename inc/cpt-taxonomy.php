@@ -48,7 +48,7 @@ function school_register_custom_post_types() {
         'supports'              => array( 'title' ),
     );
 
-    register_post_type( 'schoo-staff', $args );
+    register_post_type( 'staff', $args );
 
     // Register Students CPT
     $labels = array(
@@ -151,9 +151,9 @@ function school_register_taxonomies() {
         'show_in_rest'      => true,
     );
 
-    register_taxonomy( 'school-department', array( 'school-staff' ), $args );
-    wp_insert_term( 'Faculty', 'school-department' );
-    wp_insert_term( 'Administrative', 'school-department' );
+    register_taxonomy( 'department', array( 'staff' ), $args );
+    wp_insert_term( 'Faculty', 'department' );
+    wp_insert_term( 'Administrative', 'department' );
 
     // Student Career taxonomy
     $labels = array(

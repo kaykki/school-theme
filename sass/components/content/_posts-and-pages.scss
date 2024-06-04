@@ -176,3 +176,31 @@ $hover-text-color: white;
 		}
 	}
 }
+
+
+
+// staff page
+
+.staff-section div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+#administrative h2 {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+
+#admin-wrapper article,
+.faculty-wrapper article {
+	width: 40%;
+}
+
+#admin-wrapper,
+.faculty-wrapper {
+	display: flex;
+	flex-direction: row;
+
+}

@@ -17,7 +17,7 @@
 
     <div class="entry-summary">
         <?php
-        $excerpt = wp_trim_words(get_the_excerpt(), 100, '...');
+        $excerpt = wp_trim_words(get_the_excerpt(), 80, '...');
         echo wpautop($excerpt);
         ?>
     </div>
