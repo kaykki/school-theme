@@ -22,7 +22,8 @@
 	margin: 0 0 1.5em;
 }
 
-#main {
+#main,
+#primary {
 	width: 80%;
 	max-width: 968px;
 	margin: 0 auto;
@@ -121,6 +122,57 @@ $hover-text-color: white;
 					}
 				}
 			}
+		}
+	}
+}
+
+
+
+
+// front-page recent news
+.recent-news {
+	margin-top: 2rem;
+
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.recent-posts {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.recent-post {
+		position: relative;
+		width: 30%;
+		box-sizing: border-box;
+		overflow: hidden;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			position: relative;
+		}
+
+		.recent-post-title {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			background-color: #ffffff80;
+			padding: 0.5rem 0;
+			box-sizing: border-box;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
 		}
 	}
 }

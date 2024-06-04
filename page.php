@@ -31,8 +31,44 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<!-- recent news -->
+		<section class="recent-news">
+        <h2>Recent News</h2>
+        <?php
+        $recent_posts = new WP_Query(array(
+            'posts_per_page' => 3,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+        ));
+
+        if ( $recent_posts->have_posts() ) :
+            echo '<div class="recent-posts">';
+            while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+                ?>
+                <div class="recent-post">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php
+                        if ( has_post_thumbnail() ) {
+                            the_post_thumbnail('thumbnail');
+                        }
+                        ?>
+                        <div class="recent-post-title">
+                            <?php the_title(); ?>
+                        </div>
+                    </a>
+                </div>
+                <?php
+            endwhile;
+            echo '</div>';
+
+            wp_reset_postdata();
+        else :
+            echo '<p>No recent news available.</p>';
+        endif;
+        ?>
+    </section>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
