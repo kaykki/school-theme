@@ -1,5 +1,4 @@
 <?php
-require get_template_directory() . '/inc/cpt-taxonomy.php';
 /**
  * School Theme functions and definitions
  *
@@ -196,6 +195,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Register CPTs and Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /**
  * Load Jetpack compatibility file.
