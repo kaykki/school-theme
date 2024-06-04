@@ -42,7 +42,6 @@ get_header();
 								<?php 
 								the_post_thumbnail('student-featured-image', array('alt' => get_the_title()));
 								the_excerpt(); 
-								
 								?>
 							</article>
 						<?php
