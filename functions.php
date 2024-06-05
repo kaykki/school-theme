@@ -47,7 +47,8 @@ function school_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Custom Image crop size
-	add_image_size( 'student-featured-image', 300, 200, array('center') );
+	add_image_size( 'long-student-featured-image', 200, 300, array('center') );
+	add_image_size( 'wide-student-featured-image', 300, 200, array('center') );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -243,3 +244,15 @@ function my_title_place_holder(){
 	}
 }
 add_filter( 'enter_title_here', 'my_title_place_holder' );
+
+/**
+ * Removes prefix for post type school-student.
+ */
+function school_archive_title_prefix( $prefix ){
+	if ( get_post_type() === 'school-student' ) {
+		return false;
+	} else {
+		return $prefix;
+	}
+ }
+ add_filter( 'get_the_archive_title_prefix', 'school_archive_title_prefix' );

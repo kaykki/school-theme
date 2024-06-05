@@ -31,9 +31,9 @@ get_header();
 				
 				$query = new WP_Query( $args );
 				
-				if ( $query->have_posts() ) {
+				if ( $query->have_posts() ) :
 					echo '<section class="students-section">';
-					while ( $query->have_posts() ) {
+					while ( $query->have_posts() ) :
 						$query->the_post();
 						?>
 							<article class='student-card'>
@@ -41,30 +41,29 @@ get_header();
 									<h2><?php the_title(); ?></h2>
 								</a>
 								<?php 
-								the_post_thumbnail('student-featured-image', array('alt' => get_the_title()));
+								the_post_thumbnail('wide-student-featured-image', array('alt' => get_the_title()));
 								the_excerpt(); 
 
 								$terms = wp_get_post_terms( $query->post->ID, 'school-specialty' );
 								foreach ( $terms as $term ) :
 									$label = get_taxonomy( $term->taxonomy )->labels->singular_name; 
-								?>
+									?>
 									<p class="student-specialty">
 										<?php echo $label; ?>: 
 										<a href="<?php echo get_term_link( $term ); ?>">
 											<?php echo esc_html( $term->name ); ?>
 										</a>
 									</p>
-								<?php
+									<?php
 								endforeach;
 								?>
 							</article>
 						<?php
-					}
+					endwhile;
 					echo '</section>';
 					wp_reset_postdata();
-				} 
+				endif 
 			?>
-
 		<?php
 		else :
 

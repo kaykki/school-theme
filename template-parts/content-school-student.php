@@ -21,7 +21,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php the_post_thumbnail('student-featured-image'); ?>
+	<?php the_post_thumbnail('long-student-featured-image', array('alt' => get_the_title())); ?>
 
 	<div class="entry-content">
 		<?php
