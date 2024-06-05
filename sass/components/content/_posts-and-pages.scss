@@ -283,6 +283,13 @@ $hover-text-color: white;
 		color: $color__text-screen;
 	}
 
+	.entry-content .wp-block-button {
+		a {
+			color: #fff;
+		}	
+		
+	}
+
 	@media (min-width: 37.5em) {
 		display: grid;
 		grid-template-rows: auto 1fr;
@@ -310,6 +317,8 @@ $hover-text-color: white;
 }
 
 .other-students {
+	margin-bottom: 1rem;
+
 	h2 {
 		font-size: 1.5rem;
 	}
@@ -320,11 +329,14 @@ $hover-text-color: white;
 
 		li {
 			list-style-type: none;
+			margin-bottom: 1rem;
 		}
 	}
 
 	a,
 	a:visited {
 		color: $color__link;
+		font-size: 1.2rem;
+		font-weight: bold;
 	}
 }
