@@ -155,20 +155,20 @@ function school_register_taxonomies() {
     wp_insert_term( 'Faculty', 'department' );
     wp_insert_term( 'Administrative', 'department' );
 
-    // Student Career taxonomy
+    // Student Specialty taxonomy
     $labels = array(
-        'name'              => _x( 'Careers', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Career', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Careers' ),
-        'all_items'         => __( 'All Career' ),
-        'parent_item'       => __( 'Parent Career' ),
-        'parent_item_colon' => __( 'Parent Career:' ),
-        'edit_item'         => __( 'Edit Career' ),
-        'view_item'         => __( 'View Career' ),
-        'update_item'       => __( 'Update Career' ),
-        'add_new_item'      => __( 'Add New Career' ),
-        'new_item_name'     => __( 'New Career Name' ),
-        'menu_name'         => __( 'Career' ),
+        'name'              => _x( 'Specialties', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Specialty', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Specialties' ),
+        'all_items'         => __( 'All Specialty' ),
+        'parent_item'       => __( 'Parent Specialty' ),
+        'parent_item_colon' => __( 'Parent Specialty:' ),
+        'edit_item'         => __( 'Edit Specialty' ),
+        'view_item'         => __( 'View Specialty' ),
+        'update_item'       => __( 'Update Specialty' ),
+        'add_new_item'      => __( 'Add New Specialty' ),
+        'new_item_name'     => __( 'New Specialty Name' ),
+        'menu_name'         => __( 'Specialty' ),
     );
     $args = array(
         'hierarchical'      => true,
@@ -179,8 +179,8 @@ function school_register_taxonomies() {
         'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'career' ),
+        'rewrite'           => array( 'slug' => 'specialty' ),
     );
-    register_taxonomy( 'school-career', array( 'school-student' ), $args );
+    register_taxonomy( 'school-specialty', array( 'school-student' ), $args );
 }
 add_action( 'init', 'school_register_taxonomies', 0 );
