@@ -145,25 +145,31 @@ $hover-text-color: white;
 		margin-bottom: 1rem;
 	}
 
+	a,
+	a:visited {
+		text-decoration: none;
+		color: $color__link;
+		display: block;
+		position: relative;
+	}
+
+	p {
+		font-weight: bold;
+	}
+
 	.recent-posts {
 		display: flex;
-		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: 1rem;
+
+		@media (min-width: 37.5em) {
+			justify-content: space-between;	
+		}
 	}
 
 	.recent-post {
 		position: relative;
-		width: 30%;
-		box-sizing: border-box;
-		overflow: hidden;
-
-		a {
-			text-decoration: none;
-			color: inherit;
-			display: block;
-			position: relative;
-		}
+		width: 100%;
 
 		.recent-post-title {
 			position: absolute;
@@ -172,14 +178,24 @@ $hover-text-color: white;
 			text-align: center;
 			font-weight: bold;
 			background-color: #ffffff80;
-			padding: 0.5rem 0;
+			padding: 1rem;
 			box-sizing: border-box;
 		}
 
-		img {
-			width: 100%;
-			height: auto;
-			display: block;
+		@media (min-width: 37.5em) {
+			width: 30%;
+			justify-content: space-around;
+		}
+	}
+
+	.all-news-btn {
+		&:hover {
+			text-decoration: underline;
+
+			a {
+				color: $color__link-hover;
+			}
+			
 		}
 	}
 }
@@ -277,6 +293,13 @@ $hover-text-color: white;
 		color: $color__text-screen;
 	}
 
+	.entry-content .wp-block-button {
+		a {
+			color: #fff;
+		}	
+		
+	}
+
 	@media (min-width: 37.5em) {
 		display: grid;
 		grid-template-rows: auto 1fr;
@@ -304,6 +327,8 @@ $hover-text-color: white;
 }
 
 .other-students {
+	margin-bottom: 1rem;
+
 	h2 {
 		font-size: 1.5rem;
 	}
@@ -314,11 +339,14 @@ $hover-text-color: white;
 
 		li {
 			list-style-type: none;
+			margin-bottom: 1rem;
 		}
 	}
 
 	a,
 	a:visited {
 		color: $color__link;
+		font-size: 1.2rem;
+		font-weight: bold;
 	}
 }
