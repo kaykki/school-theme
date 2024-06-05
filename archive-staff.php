@@ -18,7 +18,7 @@ get_header();
 	
 	<section class="staff-section" id="administrative">
 		<h2>Administrative</h2>
-		<div id="admin-wrapper">
+		<div class="admin-wrapper">
 		<?php
 		$admin_args = array(
 			'post_type' => 'staff',
@@ -91,10 +91,12 @@ get_header();
                         <p><a href="<?php echo esc_url($instructor_website); ?>" target="_blank">Instructor's Website</a></p>
                     <?php endif; ?>
                 </article>
-			</div>
                 <?php
             endwhile;
             wp_reset_postdata();
+			?>
+		</div>
+			<?php
         else :
             ?>
             <p>No faculty members found.</p>

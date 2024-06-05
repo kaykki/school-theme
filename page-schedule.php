@@ -16,10 +16,12 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <h1><?php the_title(); ?></h1>
+    <h1>Course Schedule</h1>
+    <p>This is the schedule for the upcoming week of classes. It is updated every Sunday evening. Lorem ipsum cras nec dui sodales, congue lacus quis, aliquam ante. Aenean enim nisi, venenatis eu lectus commodo, tristique posuere ligula. Nam velit erat, mollis tincidunt auctor id, hendrerit eget turpis.</p>
     
     <?php if( have_rows('course') ): ?>
         <table class="schedule-table">
+            <caption>Weekly Course Schedule</caption>
             <thead>
                 <tr>
                     <th>Date</th>
