@@ -22,19 +22,37 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			$terms = wp_get_post_terms(get_the_ID(), 'school-specialty');
 
-			endwhile;
+			if ($terms && ! is_wp_error($terms)) :
+				foreach ($terms as $term) {
+					$args = array(
+						'post_type' => 'school-student',
+						'tax_query' => array(
+							array(
+								'taxonomy' =>'school-specialty',
+								'field'	   => 'slug',
+								'terms'    => $term->slug,
+							),
+						),
+						'orderby' => 'title',
+						'order'	  => 'ASC',
+					);
+		
+					$query = new WP_Query( $args );
 
+					if ( $query->have_posts() ) :
+						echo '<section class="students-section">';
+						while ( $query->have_posts() ) {
+							$query->the_post();
+							get_template_part( 'template-parts/content', get_post_type() );
+						}
+						echo '</section>';
+						wp_reset_postdata();
+					endif; 
+				}
+			endif;
 			the_posts_navigation();
 
 		else :
