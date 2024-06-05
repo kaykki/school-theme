@@ -205,7 +205,7 @@ $hover-text-color: white;
 	flex-wrap: wrap;
 	gap: 1rem;
 	justify-content: space-around;
-	
+
 	h2 {
 		color: $color__text-screen;
 		font-size: 1.5rem;
@@ -228,7 +228,7 @@ $hover-text-color: white;
 		flex-direction: column;
 		gap: 1rem;
 		max-width: 18.75rem;
-		
+
 		@media (min-width: 37.5em) {
 			width: 40%;
 		}
@@ -245,4 +245,32 @@ $hover-text-color: white;
 			font-weight: bold;
 		}
 	}
+}
+
+
+// schedule page
+.schedule-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.schedule-table th {
+	background-color: #f4f4f4;
+	font-weight: bold;
+}
+
+.schedule-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.schedule-table tr:hover {
+	background-color: #f1f1f1;
 }
