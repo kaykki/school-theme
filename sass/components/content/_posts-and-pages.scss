@@ -191,27 +191,35 @@ $hover-text-color: white;
 }
 
 // staff page
-.staff-section div {
-	display: flex;
-	flex-wrap: wrap;
+.staff-section {
+
+	div {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	h2 {
+		text-decoration: underline;
+	}
 }
 
 
-#administrative h2 {
-	text-decoration: underline;
-	color: #ffffff;
-}
 
 
-#admin-wrapper article,
-.faculty-wrapper article {
-	width: 40%;
-}
 
-#admin-wrapper,
+.admin-wrapper,
 .faculty-wrapper {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2rem;
+
+	article {
+		width: 40%;
+	}
+
+	a:visited {
+		color: #4294c4;
+	}
 
 }
 
@@ -319,32 +327,4 @@ $hover-text-color: white;
 	a:visited {
 		color: $color__link;
 	}
-}
-
-
-// schedule page
-.schedule-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin: 20px 0;
-}
-
-.schedule-table th,
-.schedule-table td {
-	border: 1px solid #ddd;
-	padding: 8px;
-	text-align: left;
-}
-
-.schedule-table th {
-	background-color: #f4f4f4;
-	font-weight: bold;
-}
-
-.schedule-table tr:nth-child(even) {
-	background-color: #f9f9f9;
-}
-
-.schedule-table tr:hover {
-	background-color: #f1f1f1;
 }

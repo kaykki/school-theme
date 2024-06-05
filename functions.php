@@ -155,20 +155,18 @@ function school_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
 
-
+	
 // add aos library
 // https://michalsnik.github.io/aos/
-function theme_enqueue_scripts() {
-    wp_enqueue_style('aos-css', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4');
+	wp_enqueue_style('aos-css', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4');
     
     wp_enqueue_script('aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array('jquery'), '2.3.4', true);
     
     wp_add_inline_script('aos-js', 'AOS.init();');
 }
-add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
+
 
 function enqueue_staff_name_script($hook) {
     if ( 'post-new.php' === $hook || 'post.php' === $hook ) {

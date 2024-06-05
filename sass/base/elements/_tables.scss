@@ -2,3 +2,31 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+// schedule page
+.schedule-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+	border: transparent;
+	padding: 8px;
+	text-align: center;
+	height: 7rem;
+}
+
+.schedule-table th {
+	background-color: #f4f4f4;
+	font-weight: bold;
+}
+
+.schedule-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.schedule-table tr:hover {
+	background-color: #f1f1f1;
+}
