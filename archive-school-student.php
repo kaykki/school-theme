@@ -32,10 +32,11 @@ get_header();
 				$query = new WP_Query( $args );
 				
 				if ( $query->have_posts() ) {
+					echo '<section class="students-section">';
 					while ( $query->have_posts() ) {
 						$query->the_post();
 						?>
-							<article>
+							<article class='student-card'>
 								<a href="<?php the_permalink();  ?>">
 									<h2><?php the_title(); ?></h2>
 								</a>
@@ -47,7 +48,7 @@ get_header();
 								foreach ( $terms as $term ) :
 									$label = get_taxonomy( $term->taxonomy )->labels->singular_name; 
 								?>
-									<p>
+									<p class="student-specialty">
 										<?php echo $label; ?>: 
 										<a href="<?php echo get_term_link( $term ); ?>">
 											<?php echo esc_html( $term->name ); ?>
@@ -59,6 +60,7 @@ get_header();
 							</article>
 						<?php
 					}
+					echo '</section>';
 					wp_reset_postdata();
 				} 
 			?>
