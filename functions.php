@@ -92,6 +92,7 @@ function school_theme_setup() {
 
 	// wide width and full width alignment support
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'align-full' ); 
 
 	/**
 	 * Add support for core custom logo.
