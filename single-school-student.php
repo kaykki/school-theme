@@ -18,6 +18,10 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
+			$id = get_the_ID();
+			?>
+			<pre><?php get_the_ID(); ?><pre>
+			<?php
 			// the_post_navigation(
 			// 	array(
 			// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'school-theme' ) . '</span> <span class="nav-title">%title</span>',

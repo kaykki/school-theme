@@ -25,6 +25,15 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://kayki.ca/school/">Kaki Kagatan, Danny Kim</a>' );
 				?>
 		</div><!-- .site-info -->
+		<nav id="site-navigation" class="main-navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

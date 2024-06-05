@@ -45,12 +45,12 @@ get_header();
 
 								$terms = wp_get_post_terms( $query->post->ID, 'school-specialty' );
 								foreach ( $terms as $term ) :
-									$label = get_taxonomy($term->taxonomy)->labels->singular_name; 
+									$label = get_taxonomy( $term->taxonomy )->labels->singular_name; 
 								?>
 									<p>
 										<?php echo $label; ?>: 
-										<a href="<?php echo get_term_link($term); ?>">
-											<?php echo $term->name; ?>
+										<a href="<?php echo get_term_link( $term ); ?>">
+											<?php echo esc_html( $term->name ); ?>
 										</a>
 									</p>
 								<?php
