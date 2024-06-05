@@ -58,11 +58,21 @@
 	}
 }
 
+.entry-header {
+
+	a,
+	a:visited {
+		color: #4169e1;
+	}
+}
+
 .category-tag {
 	display: flex;
 	flex-direction: row;
 	gap: 2rem;
 }
+
+
 
 // header, navbar
 $background-color: black;

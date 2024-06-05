@@ -17,7 +17,8 @@
 
     <div class="entry-summary">
         <?php
-        $excerpt = wp_trim_words(get_the_excerpt(), 80, '...');
+        $excerpt = get_the_excerpt();
+        $excerpt = wp_trim_words($excerpt, 80, '...');
         echo wpautop($excerpt);
         ?>
     </div>
@@ -34,5 +35,8 @@
             printf('<span class="tags-links"> Tagged %s</span>', $tags_list);
         }
         ?>
+         <span class="comments-link">
+            <a href="<?php the_permalink(); ?>#respond">Leave a Comment</a>
+        </span>
     </div>
 </article>

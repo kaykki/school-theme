@@ -6,3 +6,21 @@
 		max-width: 100%;
 	}
 }
+
+.widget-area {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	section {
+		width: 20%;
+	}
+
+	li {
+		list-style: disc;
+	}
+
+	a:visited {
+		color: #4169e1;
+	}
+}
