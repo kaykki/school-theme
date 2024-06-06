@@ -1,0 +1,51 @@
+$background-color: black;
+$hover-background-color: blue;
+$text-color: white;
+$hover-text-color: white;
+.site-header {
+    background-color: $background-color;
+    color: $text-color;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 5rem 1fr 5rem auto;
+
+    .site-branding {
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-description {
+		h1 {
+			margin: 0;
+
+			a {
+				color: $text-color;
+				text-decoration: none;
+
+				&:hover {
+					color: $hover-text-color;
+				}
+			}
+		}
+	}
+
+    .main-navigation {
+        grid-column: 4 / 5;
+    }
+
+    @media (min-width: 55em) {
+        display: grid;
+        align-items: start;
+        grid-template-columns: auto 20rem auto 20rem auto;
+
+        .site-branding {
+            grid-column: 2 / 3;
+        }
+
+        .main-navigation {
+            grid-column: 4 / 5;
+        }
+    }
+}

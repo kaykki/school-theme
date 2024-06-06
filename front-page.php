@@ -57,10 +57,8 @@ get_header();
             endwhile;
             ?>
             </section>
-            <?php
-            ?>
             <p class="all-news-btn">
-                <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>">See All News</a>
+                <a href="<?php echo esc_url(the_permalink(25)); ?>">See All News</a>
             </p>
             <?php
             wp_reset_postdata();
