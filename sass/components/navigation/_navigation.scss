@@ -9,12 +9,16 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			background-color: black;
 			float: left;
 			position: absolute;
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
+			display: flex;
+			flex-direction: column;
+			margin-left: -1rem;
+			padding: 1rem;
 
 			ul {
 				left: -999em;
@@ -22,9 +26,8 @@
 			}
 
 			li {
-
 				&:hover > ul,
-				&.focus > ul {
+				&:focus > ul {
 					display: block;
 					left: auto;
 				}
@@ -39,7 +42,8 @@
 			}
 
 			a:hover,
-			a.focus {
+			a:focus {
+				color: $color__text-screen;
 			}
 		}
 
@@ -51,7 +55,6 @@
 
 	li {
 		position: relative;
-
 		&:hover > a,
 		&.focus > a {
 		}
@@ -75,6 +78,15 @@
 	display: block;
 }
 
+.main-navigation.toggled ul {
+	position: absolute;
+	top: 6.5rem;
+	left: 0;
+	background-color: black;
+	width: 100%;
+}
+
+
 
 @media screen and (min-width: 37.5em) {
 
@@ -84,6 +96,9 @@
 
 	.main-navigation ul {
 		display: flex;
+		gap: 2rem;
+		justify-content: end;
+		align-items: center;
 	}
 }
 

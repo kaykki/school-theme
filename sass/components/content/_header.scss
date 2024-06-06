@@ -9,11 +9,28 @@ $hover-text-color: white;
     align-items: center;
     grid-template-columns: auto 5rem 1fr 5rem auto;
 
+    a,
+	a:visited {
+		color: #fff;
+	}
+
+    a:hover,
+    a:focus {
+        color: $color__text-screen;
+    }
+
     .site-branding {
         grid-column: 2 / 3;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 0.5rem;
+
+        p {
+            margin: 0;
+        }
     }
 
     .site-description {
@@ -32,20 +49,19 @@ $hover-text-color: white;
 	}
 
     .main-navigation {
-        grid-column: 4 / 5;
+        grid-column: 4 / 5;  
     }
 
-    @media (min-width: 55em) {
+    @media (min-width: 37.5em) {
         display: grid;
         align-items: start;
-        grid-template-columns: auto 20rem auto 20rem auto;
-
+        grid-template-columns: auto 10rem auto 1fr auto;
         .site-branding {
             grid-column: 2 / 3;
         }
+    }
 
-        .main-navigation {
-            grid-column: 4 / 5;
-        }
+    @media (min-width: 55em) {
+        grid-template-columns: auto 20rem auto 20rem auto;
     }
 }
