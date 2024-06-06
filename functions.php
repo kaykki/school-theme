@@ -213,44 +213,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Change The Excerpt Length for post type school-student.
+ * Change The Excerpt Length for post type.
  */
 function student_list_excerpt_length( $length ) {
 	if(get_post_type() === 'school-student') {
 		return 25;
-	} 
+	} else if((get_post_type() === 'post')){
+		return 80;
+	}
 }
 add_filter( 'excerpt_length', 'student_list_excerpt_length', 999 );
 
 /**
- * Change the Excerpt More text for post type school-student.
+ * Change the Excerpt More text for post type.
  */
 function student_list_excerpt_more( $more ) {
 	if(get_post_type() === 'school-student') {
 		$more = '<br> <a class="read-more" href="' . esc_url( get_permalink() ) . '">Read more about the student…</a>';
     	return $more;
-	} 
-}
-add_filter( 'excerpt_more', 'student_list_excerpt_more' );
-/**
- * Change The Excerpt Length for post type page news.
- */
-function post_excerpt_length( $length ) {
-	if(get_post_type() === 'post') {
-		return 80;
-	} 
-}
-add_filter( 'excerpt_length', 'post_excerpt_length', 999 );
-
-/**
- * Change the Excerpt More text for post type page news.
- */
-function post_excerpt_more( $more ) {
-	if(get_post_type() === 'post') {
+	} else if(get_post_type() === 'post') {
     	return '...';
 	} 
 }
-add_filter( 'excerpt_more', 'post_excerpt_more' );
+add_filter( 'excerpt_more', 'student_list_excerpt_more' );
 
 /**
  * Change the Excerpt More text for post type school-student.
