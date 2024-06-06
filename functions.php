@@ -271,3 +271,6 @@ function school_archive_title_prefix( $prefix ){
     return $title;
 }
 add_filter('the_title', 'change_title');
+
+
+
