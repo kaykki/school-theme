@@ -260,3 +260,14 @@ function school_archive_title_prefix( $prefix ){
  }
  add_filter( 'get_the_archive_title_prefix', 'school_archive_title_prefix' );
 
+ /**
+ * Changes the title for specific pages.
+ */
+ function change_title($title) {
+    // Check if it's the front page
+    if (is_front_page() && in_the_loop() && is_main_query()) {
+        return ''; // Return an empty string to exclude the title
+    }
+    return $title;
+}
+add_filter('the_title', 'change_title');
